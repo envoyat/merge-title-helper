@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Merge Commit Title Helper
 // @namespace    https://github.com/envoyat/merge-title-helper
-// @version      0.1
+// @version      0.2
 // @description  Helps us use the correct title format for merge commits (in GitHub)
 // @downloadURL  https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
 // @updateURL    https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
