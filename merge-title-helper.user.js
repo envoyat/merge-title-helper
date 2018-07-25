@@ -17,7 +17,7 @@
     var pullReqNumber = document.getElementsByClassName('gh-header-number')[0].innerText.replace('#', '');
 
     function isMergeMessageValid() {
-        debugger
+        console.log('triggered');
         var msgField = document.getElementById('merge_title_field');
         var parentDiv = msgField.closest('div');
         var message = msgField.value;
