@@ -1,9 +1,11 @@
 // ==UserScript==
-// @name         New Userscript
-// @namespace    http://tampermonkey.net/
+// @name         Merge Commit Title Helper
+// @namespace    https://github.com/envoyat/merge-title-helper
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  Helps us use the correct title format for merge commits (in GitHub)
+// @downloadURL  https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
+// @updateURL    https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
+// @author       https://github.com/munkijeong
 // @match        https://github.com/envoyat/SpiritOfTasmania/pull*
 // @grant        none
 // ==/UserScript==
