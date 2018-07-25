@@ -46,5 +46,5 @@
     msgField.after(newDiv);
     isMergeMessageValid();
 
-    document.getElementById("merge_title_field").addEventListener("input", function(){isMergeMessageValid()});
+    document.getElementById("merge_title_field").addEventListener("input", isMergeMessageValid);
 })();
