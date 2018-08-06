@@ -6,7 +6,7 @@
 // @downloadURL  https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
 // @updateURL    https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
 // @author       https://github.com/munkijeong
-// @match        https://github.com/envoyat/SpiritOfTasmania/pull*
+// @match        https://github.com/envoyat/SpiritOfTasmania/pull/*
 // @grant        none
 // ==/UserScript==
 
@@ -18,6 +18,10 @@
 
     function isMergeMessageValid() {
         debugger
+        if(!document.getElementById('merge-message-warning')){
+            createMergeMessage();
+        }
+
         var msgField = document.getElementById('merge_title_field');
         var parentDiv = msgField.closest('div');
         var message = msgField.value;
@@ -37,14 +41,18 @@
         }
     }
 
-    var msgField = document.getElementById('merge_title_field');
-    var newDiv = document.createElement('div');
-    var newContent = document.createTextNode("New rule 101: Put PR number with # at the end of merge message e.g. SOT-9999: upgrade umbraco (#" + pullReqNumber + ")");
-    newDiv.setAttribute("style", "display: none;");
-    newDiv.setAttribute("id", "merge-message-warning");
-    newDiv.appendChild(newContent);
-    msgField.after(newDiv);
+    function createMergeMessage(){
+        var msgField = document.getElementById('merge_title_field');
+        var newDiv = document.createElement('div');
+        var newContent = document.createTextNode("New rule 101: Put PR number with # at the end of merge message e.g. SOT-9999: upgrade umbraco (#" + pullReqNumber + ")");
+        newDiv.setAttribute("style", "display: none;");
+        newDiv.setAttribute("id", "merge-message-warning");
+        newDiv.appendChild(newContent);
+        msgField.after(newDiv);
+    }
+
     isMergeMessageValid();
 
     window.addEventListener("input", isMergeMessageValid);
+    window.addEventListener("click", isMergeMessageValid);
 })();
