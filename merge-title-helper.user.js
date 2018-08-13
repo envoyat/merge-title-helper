@@ -6,7 +6,7 @@
 // @downloadURL  https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
 // @updateURL    https://github.com/envoyat/merge-title-helper/raw/master/merge-title-helper.user.js
 // @author       https://github.com/munkijeong
-// @match        https://github.com/envoyat/SpiritOfTasmania/pull/*
+// @match        https://github.com/envoyat/SpiritOfTasmania/*
 // @grant        none
 // ==/UserScript==
 
@@ -17,7 +17,6 @@
     var pullReqNumber = document.getElementsByClassName('gh-header-number')[0].innerText.replace('#', '');
 
     function isMergeMessageValid() {
-        debugger
         if(!document.getElementById('merge-message-warning')){
             createMergeMessage();
         }
