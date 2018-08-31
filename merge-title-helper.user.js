@@ -14,7 +14,7 @@
   'use strict'
 
   // Your code here...
-  var pullReqNumber = document
+  const pullReqNumber = document
     .getElementsByClassName('gh-header-number')[0]
     .innerText.replace('#', '')
 
@@ -23,12 +23,12 @@
       createMergeMessage()
     }
 
-    var msgField = document.getElementById('merge_title_field')
-    var parentDiv = msgField.closest('div')
-    var message = msgField.value
-    var rx = /\(#([^)]+)\)/
-    var result = message.match(rx)
-    var disable = false
+    const msgField = document.getElementById('merge_title_field')
+    const parentDiv = msgField.closest('div')
+    const message = msgField.value
+    const rx = /\(#([^)]+)\)/
+    const result = message.match(rx)
+    let disable = false
     if (result != null && result[1] === pullReqNumber) {
       document
         .getElementById('merge-message-warning')
@@ -40,16 +40,18 @@
       disable = true
     }
 
-    var mergeButtons = document.getElementsByClassName('js-merge-commit-button')
-    for (var i = 0; i < mergeButtons.length; i++) {
+    const mergeButtons = document.getElementsByClassName(
+      'js-merge-commit-button',
+    )
+    for (let i = 0; i < mergeButtons.length; i++) {
       mergeButtons[i].disabled = disable
     }
   }
 
   function createMergeMessage() {
-    var msgField = document.getElementById('merge_title_field')
-    var newDiv = document.createElement('div')
-    var newContent = document.createTextNode(
+    const msgField = document.getElementById('merge_title_field')
+    const newDiv = document.createElement('div')
+    const newContent = document.createTextNode(
       'New rule 101: Put PR number with # at the end of merge message e.g. SOT-9999: upgrade umbraco (#' +
         pullReqNumber +
         ')',
