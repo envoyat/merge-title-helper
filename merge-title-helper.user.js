@@ -24,7 +24,6 @@
     }
 
     const msgField = document.getElementById('merge_title_field')
-    const parentDiv = msgField.closest('div')
     const message = msgField.value
     const rx = /\(#([^)]+)\)/
     const result = message.match(rx)
